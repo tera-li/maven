@@ -28,6 +28,7 @@
 
     <!-- 指定映射配置文件的位置-->
     <mappers>
-        <mapper resource="com/it/mapper/UserMapper.xml"/>
+<!--        <mapper resource="com/it/mapper/UserMapper.xml"/>-->
+        <package name="com/it/mapper"/>
     </mappers>
 </configuration>

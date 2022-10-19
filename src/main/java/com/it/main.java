@@ -17,10 +17,10 @@ public class main {
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         SqlSession session = factory.openSession();
         // mapper代理
-//        UserMapper users = session.getMapper(UserMapper.class);
-//        List<User> userList = users.selectAll();
+        UserMapper users = session.getMapper(UserMapper.class);
+        List<User> userList = users.selectAll();
         // 静态
-        List<User> userList = session.selectList("com.it.mapper.UserMapper.selectAll");
+//        List<User> userList = session.selectList("com.it.mapper.UserMapper.selectAll");
         System.out.println("查到了");
         System.out.println(userList);
         session.close();
