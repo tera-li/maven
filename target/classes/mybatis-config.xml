@@ -28,7 +28,9 @@
 
     <!-- 指定映射配置文件的位置-->
     <mappers>
-<!--        <mapper resource="com/it/mapper/UserMapper.xml"/>-->
+        <!--   加载sql的映射文件     -->
+        <!-- <mapper resource="com/it/mapper/UserMapper.xml"/> -->
+        <!--   Mapper代理方式     -->
         <package name="com/it/mapper"/>
     </mappers>
 </configuration>
