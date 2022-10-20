@@ -5,6 +5,7 @@ import java.util.Date;
 public class User {
     int runoob_id;
     String runoob_title;
+    String runoobTitle;
     String runoob_author;
     Date submission_date;
 
@@ -17,11 +18,19 @@ public class User {
         return "User{" +
                 "runoob_id=" + runoob_id +
                 ", runoob_title='" + runoob_title + '\'' +
+                ", runoobTitle='" + runoobTitle + '\'' +
                 ", runoob_author='" + runoob_author + '\'' +
                 ", submission_date=" + submission_date +
                 '}';
     }
 
+    public String getRunoobTitle() {
+        return runoobTitle;
+    }
+
+    public void setRunoobTitle(String runoobTitle) {
+        this.runoobTitle = runoobTitle;
+    }
     public int getRunoob_id() {
         return runoob_id;
     }

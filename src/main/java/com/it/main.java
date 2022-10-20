@@ -22,7 +22,7 @@ public class main {
         // 获取mapper接口的代理对象
         UserMapper users = session.getMapper(UserMapper.class);
         // 实现代理接口
-        List<User> userList = users.selectAll();
+        List<User> userList = users.selectOne(2);
         System.out.println("查到了");
         System.out.println(userList);
         session.close();
