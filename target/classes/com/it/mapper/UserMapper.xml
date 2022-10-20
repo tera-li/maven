@@ -13,15 +13,15 @@
         from runoob_tbl;
     </select>
     <!--  2  -->
+    <resultMap id="userResultMap" type="User">
+        <result column="runoob_title" property="runoobTitle"/>
+    </resultMap>
+
     <select id="selectAllList" resultMap="userResultMap">
         select
         <include refid="bran"/>
         from runoob_tbl;
     </select>
-
-    <resultMap id="userResultMap" type="User">
-        <result column="runoob_title" property="runoobTitle"/>
-    </resultMap>
     <!--  3  -->
     <select id="selectOne" parameterType="int" resultType="User">
         select
@@ -32,12 +32,42 @@
     <select id="selectCondition" resultMap="userResultMap">
         select
         <include refid="bran"/>
-        from runoob_tbl where runoob_id = #{runoob_id};
+        from runoob_tbl where runoob_id = #{runoob_id} and runoob_title = #{runoob_title};
     </select>
     <!--  5  -->
     <select id="selectConditionMap" resultMap="userResultMap">
         select
         <include refid="bran"/>
-        from runoob_tbl where runoob_id = #{runoob_id};
+        from runoob_tbl 
+            <where>
+                <if test="runoob_id != null and runoob_id != ''">
+                    and runoob_id = #{runoob_id}
+                </if>
+                <if test="runoob_title != null and runoob_title != ''">
+                    and runoob_title = #{runoob_title}
+                </if>
+            </where>
     </select>
+    <!--  6  -->
+    <select id="selectConditionChoose" resultMap="userResultMap">
+        select
+        <include refid="bran"/>
+        from runoob_tbl
+        <where>
+            <choose>
+                <when test="runoob_id != null and runoob_id != ''">
+                    and runoob_id = #{runoob_id}
+                </when>
+                <when test="runoob_title != null and runoob_title != ''">
+                    and runoob_title = #{runoob_title}
+                </when>
+            </choose>
+        </where>
+    </select>
+    <!--  7  -->
+    <insert id="addOne">
+        insert into runoob_tbl (runoob_title, runoob_author, submission_date)
+        values (#{runoob_title},#{runoob_author},#{submission_date});
+    </insert>
+
 </mapper>
