@@ -14,4 +14,5 @@ public interface UserMapper {
     List<User> selectConditionChoose(Map map);
     boolean addOne(User user);
     boolean updateOne(User user);
+    boolean deleteOne(User user);
 }

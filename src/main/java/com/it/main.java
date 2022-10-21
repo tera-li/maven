@@ -16,26 +16,32 @@ import java.util.List;
 import java.util.Map;
 
 public class main {
-    public static void main(String[] args) throws IOException {
-        // 加载核心配置
+
+    public SqlSession getSession() throws IOException {
         InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
-        SqlSession session = factory.openSession(true);
+        return factory.openSession(true);
+    }
+
+    @Test
+    public void main() throws IOException {
+        // 加载核心配置
+        SqlSession session = getSession();
         // 执行sql
         // List<User> userList = session.selectList("com.it.mapper.UserMapper.selectAll");
         // 获取mapper接口的代理对象
         UserMapper users = session.getMapper(UserMapper.class);
         // 实体类封装参数
         User user = new User();
-        user.setRunoob_id(2);
-        user.setRunoob_title("111m");
+        user.setRunoob_id(28);
+        user.setRunoob_title("22229999");
         // map集合封装
         Map map = new HashMap();
-        map.put("runoob_id", 2);
-        map.put("runoob_title", "111m");
+        map.put("runoob_id", 28);
+        map.put("runoob_title", "22229999");
         List<User> userList1 = users.selectAll();
         List<User> userList2 = users.selectAllList();
-        List<User> userList3 = users.selectOne(2);
+        List<User> userList3 = users.selectOne(28);
         List<User> userList4 = users.selectCondition(user);
         List<User> userList5 = users.selectConditionMap(map);
         List<User> userList6 = users.selectConditionChoose(map);
@@ -52,9 +58,7 @@ public class main {
     @Test
     public void insetData() throws IOException {
         // 加载核心配置
-        InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
-        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
-        SqlSession session = factory.openSession(true);
+        SqlSession session = getSession();
         // 获取mapper接口的代理对象
         UserMapper users = session.getMapper(UserMapper.class);
         // 插入
@@ -71,9 +75,24 @@ public class main {
     @Test
     public void updateData() throws IOException {
         // 加载核心配置
-        InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
-        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
-        SqlSession session = factory.openSession(true);
+        SqlSession session = getSession();
+        // 获取mapper接口的代理对象
+        UserMapper users = session.getMapper(UserMapper.class);
+        // 插入
+        User addUser = new User();
+        addUser.setRunoob_id(29);
+        addUser.setRunoob_title(null);
+        addUser.setRunoob_author("surprise");
+        addUser.setSubmission_date(new Date());
+        boolean num = users.updateOne(addUser);
+        System.out.println(num);
+        session.close();
+    }
+
+    @Test
+    public void deleteData() throws IOException {
+        // 加载核心配置
+        SqlSession session = getSession();
         // 获取mapper接口的代理对象
         UserMapper users = session.getMapper(UserMapper.class);
         // 插入

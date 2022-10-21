@@ -69,15 +69,25 @@
         insert into runoob_tbl (runoob_title, runoob_author, submission_date)
         values (#{runoob_title},#{runoob_author},#{submission_date});
     </insert>
-    <!--  8 返回更新的主键id  -->
+    <!--  8  -->
     <update id="updateOne">
         update runoob_tbl
-        set
-          runoob_title = #{runoob_title},
-          runoob_author = #{runoob_author},
-          submission_date = #{submission_date}
+        <set>
+            <if test="runoob_title != null">
+                runoob_title = #{runoob_title},
+            </if>
+            <if test="runoob_author != null">
+                runoob_author = #{runoob_author},
+            </if>
+            <if test="submission_date">
+                submission_date = #{submission_date}
+            </if>
+        </set>
         where
         runoob_id=#{runoob_id}
     </update>
-
+    <!--  9  -->
+    <delete id="deleteOne">
+        delete runoob_tbl
+    </delete>
 </mapper>
