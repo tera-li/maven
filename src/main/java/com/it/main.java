@@ -78,7 +78,7 @@ public class main {
         SqlSession session = getSession();
         // 获取mapper接口的代理对象
         UserMapper users = session.getMapper(UserMapper.class);
-        // 插入
+        // 更新
         User addUser = new User();
         addUser.setRunoob_id(29);
         addUser.setRunoob_title(null);
@@ -96,13 +96,15 @@ public class main {
         // 获取mapper接口的代理对象
         UserMapper users = session.getMapper(UserMapper.class);
         // 插入
-        User addUser = new User();
-        addUser.setRunoob_id(28);
-        addUser.setRunoob_title("22229999");
-        addUser.setRunoob_author("surprise");
-        addUser.setSubmission_date(new Date());
-        boolean num = users.updateOne(addUser);
-        System.out.println(num);
+        // 单个删除
+        // User addUser = new User();
+        // addUser.setRunoob_id(32);
+        // boolean num = users.deleteOne(addUser);
+
+        // 批量删除
+        int [] ids = { 30, 31, 32 };
+        boolean nums = users.deleteList(ids);
+        System.out.println(nums);
         session.close();
     }
 }

@@ -15,4 +15,5 @@ public interface UserMapper {
     boolean addOne(User user);
     boolean updateOne(User user);
     boolean deleteOne(User user);
+    boolean deleteList(int[] ids);
 }

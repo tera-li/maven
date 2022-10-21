@@ -88,6 +88,13 @@
     </update>
     <!--  9  -->
     <delete id="deleteOne">
-        delete runoob_tbl
+        delete from runoob_tbl where runoob_id=#{runoob_id}
+    </delete>
+    <delete id="deleteList">
+        delete from runoob_tbl where runoob_id
+        in
+        <foreach collection="array" item="runoob_id" separator="," open="(" close=")">
+            #{runoob_id}
+        </foreach>
     </delete>
 </mapper>
