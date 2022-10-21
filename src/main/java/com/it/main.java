@@ -52,7 +52,9 @@ public class main {
         addUser.setRunoob_title("111m");
         addUser.setRunoob_author("surprise");
         addUser.setSubmission_date(new Date());
-        users.addOne(addUser);
+//        users.addOne(addUser);
+//        Integer id = addUser.getRunoob_id();
+//        System.out.println(id);
         session.close();
     }
 }

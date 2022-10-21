@@ -65,7 +65,7 @@
         </where>
     </select>
     <!--  7  -->
-    <insert id="addOne">
+    <insert id="addOne" useGeneratedKeys="true" keyProperty="runoob_id">
         insert into runoob_tbl (runoob_title, runoob_author, submission_date)
         values (#{runoob_title},#{runoob_author},#{submission_date});
     </insert>
