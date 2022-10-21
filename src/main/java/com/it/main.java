@@ -6,6 +6,7 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,8 +25,6 @@ public class main {
         // List<User> userList = session.selectList("com.it.mapper.UserMapper.selectAll");
         // 获取mapper接口的代理对象
         UserMapper users = session.getMapper(UserMapper.class);
-        // 实现代理接口
-        // 查询逻辑
         // 实体类封装参数
         User user = new User();
         user.setRunoob_id(2);
@@ -47,14 +46,44 @@ public class main {
         System.out.println(userList4);
         System.out.println(userList5);
         System.out.println(userList6);
+        session.close();
+    }
+
+    @Test
+    public void insetData() throws IOException {
+        // 加载核心配置
+        InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
+        SqlSession session = factory.openSession(true);
+        // 获取mapper接口的代理对象
+        UserMapper users = session.getMapper(UserMapper.class);
         // 插入
         User addUser = new User();
         addUser.setRunoob_title("111m");
         addUser.setRunoob_author("surprise");
         addUser.setSubmission_date(new Date());
-//        users.addOne(addUser);
-//        Integer id = addUser.getRunoob_id();
-//        System.out.println(id);
+        users.addOne(addUser);
+        Integer id = addUser.getRunoob_id();
+        System.out.println(id);
+        session.close();
+    }
+
+    @Test
+    public void updateData() throws IOException {
+        // 加载核心配置
+        InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
+        SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
+        SqlSession session = factory.openSession(true);
+        // 获取mapper接口的代理对象
+        UserMapper users = session.getMapper(UserMapper.class);
+        // 插入
+        User addUser = new User();
+        addUser.setRunoob_id(28);
+        addUser.setRunoob_title("22229999");
+        addUser.setRunoob_author("surprise");
+        addUser.setSubmission_date(new Date());
+        boolean num = users.updateOne(addUser);
+        System.out.println(num);
         session.close();
     }
 }
