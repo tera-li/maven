@@ -32,7 +32,7 @@
     <select id="selectCondition" resultMap="userResultMap">
         select
         <include refid="bran"/>
-        from runoob_tbl where runoob_id = #{runoob_id} and runoob_title = #{runoob_title};
+        from runoob_tbl where runoob_id = #{user.runoob_id} and runoob_title = #{user.runoob_title};
     </select>
     <!--  5  -->
     <select id="selectConditionMap" resultMap="userResultMap">
