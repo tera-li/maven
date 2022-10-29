@@ -1,3 +1,4 @@
+/Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/dao/impl/UserDaoImpl.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/dao/BookDao.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/service/BookService.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/user/User.java
@@ -5,4 +6,5 @@
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/dao/impl/BookDaoImpl.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/AppContext.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/service/impl/BookServiceImpl.java
+/Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/dao/UserDao.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/mapper/UserMapper.java

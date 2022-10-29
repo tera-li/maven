@@ -2,6 +2,7 @@ package com.it;
 
 import com.it.dao.BookDao;
 import com.it.service.impl.BookServiceImpl;
+import com.it.service.impl.BookServiceImplAuto;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,5 +14,8 @@ public class AppContext {
         // 获取id，并调用
         BookServiceImpl bookService = (BookServiceImpl) ioc.getBean("bookService");
         bookService.BookServiceRun();
+
+        BookServiceImplAuto bookServiceAuto = (BookServiceImplAuto) ioc.getBean("bookServiceAuto");
+        bookServiceAuto.BookServiceRun();
     }
 }

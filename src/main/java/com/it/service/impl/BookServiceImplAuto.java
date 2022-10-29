@@ -3,28 +3,19 @@ package com.it.service.impl;
 import com.it.dao.impl.BookDaoImpl;
 import com.it.dao.impl.UserDaoImpl;
 import com.it.service.BookService;
+import com.it.service.BookServiceAuto;
 import org.junit.Test;
 
-public class BookServiceImpl implements BookService {
-//        BookDaoImpl BookDao = new BookDaoImpl();
+public class BookServiceImplAuto implements BookServiceAuto {
     private BookDaoImpl BookDao;
-    private final UserDaoImpl userDao;
-
-    public BookServiceImpl(UserDaoImpl userDao) {
-        this.userDao = userDao;
-    }
 
     @Test
     public void BookServiceRun() {
         System.out.println("BookService on run");
         BookDao.save();
-        userDao.save();
     }
     public void setBookDao(BookDaoImpl bookDao) {
         BookDao = bookDao;
     }
 
-    public void init() {
-        System.out.println("init ...");
-    }
 }

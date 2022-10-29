@@ -5,8 +5,16 @@
     <!--  配置bean  -->
     <!--  id为bean名字  -->
     <!--  class为bean定义类型  -->
-    <bean id="bookDao" class="com.it.dao.impl.BookDaoImpl"/>
-    <bean id="bookService" class="com.it.service.impl.BookServiceImpl">
+    <!--  手动注入  -->
+    <bean id="bookService" class="com.it.service.impl.BookServiceImpl" init-method="init">
+        <!--  自己开发推荐  setter注入，引用类型使用ref，简单数据类型使用value     -->
         <property name="bookDao" ref="bookDao"/>
+        <!--  Spring推荐  构造器注入，引用类型使用ref，简单数据类型使用value     -->
+        <constructor-arg name="userDao" ref="userDao"/>
     </bean>
+    <!-- 自动注入   -->
+    <bean id="bookServiceAuto" class="com.it.service.impl.BookServiceImplAuto" autowire="byType" />
+
+    <bean id="bookDao" class="com.it.dao.impl.BookDaoImpl" scope="prototype"/>
+    <bean id="userDao" class="com.it.dao.impl.UserDaoImpl" scope="prototype"/>
 </beans>
