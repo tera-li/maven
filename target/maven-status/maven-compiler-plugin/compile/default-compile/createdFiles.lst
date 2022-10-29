@@ -1,0 +1,5 @@
+com/it/AppContext.class
+com/it/service/BookService.class
+com/it/service/impl/BookServiceImpl.class
+com/it/dao/BookDao.class
+com/it/dao/impl/BookDaoImpl.class
