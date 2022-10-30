@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Component
+@Service("bookServiceAuto")
 public class BookServiceImplAuto implements BookServiceAuto {
     private BookDaoImpl BookDao;
 

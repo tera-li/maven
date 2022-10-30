@@ -7,25 +7,24 @@ import org.junit.Test;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Component
+@Service("bookService")
 public class BookServiceImpl implements BookService {
 //        BookDaoImpl BookDao = new BookDaoImpl();
     private BookDaoImpl BookDao;
-    private final UserDaoImpl userDao;
+    private UserDaoImpl UserDao;
 
-    public BookServiceImpl(UserDaoImpl userDao) {
-        this.userDao = userDao;
-    }
+//    public BookServiceImpl(UserDaoImpl userDao) {
+//        this.userDao = userDao;
+//    }
 
     @Test
     public void BookServiceRun() {
         System.out.println("BookService on run");
         BookDao.save();
-        userDao.save();
+        UserDao.save();
     }
-    public void setBookDao(BookDaoImpl bookDao) {
-        BookDao = bookDao;
-    }
+    public void setBookDao(BookDaoImpl bookDao) { BookDao = bookDao; }
+    public void setUserDao(UserDaoImpl userDao) { UserDao = userDao; }
 
     public void init() {
         System.out.println("init ...");

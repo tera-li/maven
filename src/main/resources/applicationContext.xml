@@ -6,17 +6,19 @@
     <!--  配置bean  -->
     <!--  id为bean名字  -->
     <!--  class为bean定义类型  -->
-    <!--  手动注入  -->
-<!--    <bean id="bookService" class="com.it.service.impl.BookServiceImpl" init-method="init">-->
-<!--        &lt;!&ndash;  自己开发推荐  setter注入，引用类型使用ref，简单数据类型使用value     &ndash;&gt;-->
-<!--        <property name="bookDao" ref="bookDao"/>-->
-<!--        &lt;!&ndash;  Spring推荐  构造器注入，引用类型使用ref，简单数据类型使用value     &ndash;&gt;-->
-<!--        <constructor-arg name="userDao" ref="userDao"/>-->
-<!--    </bean>-->
-<!--    &lt;!&ndash; 自动注入，通过类型注入  &ndash;&gt;-->
-<!--    <bean id="bookServiceAuto" class="com.it.service.impl.BookServiceImplAuto" autowire="byType" />-->
 
-<!--    <bean id="bookDao" class="com.it.dao.impl.BookDaoImpl" scope="prototype"/>-->
-<!--    <bean id="userDao" class="com.it.dao.impl.UserDaoImpl" scope="prototype"/>-->
-    <context:component-scan base-package="com.it" />
+    <!--  1. 手动注入  -->
+    <!--    <bean id="bookService" class="com.it.service.impl.BookServiceImpl" init-method="init">-->
+    <!--        &lt;!&ndash;  自己开发推荐  setter注入，引用类型使用ref，简单数据类型使用value     &ndash;&gt;-->
+    <!--        <property name="bookDao" ref="bookDao"/>-->
+    <!--        &lt;!&ndash;  Spring推荐  构造器注入，引用类型使用ref，简单数据类型使用value     &ndash;&gt;-->
+    <!--        <constructor-arg name="userDao" ref="userDao"/>-->
+    <!--    </bean>-->
+
+    <!-- 2. 自动注入，通过类型注入  -->
+    <!--    <bean id="bookServiceAuto" class="com.it.service.impl.BookServiceImplAuto" autowire="byType" />-->
+    <!--    <bean id="bookDao" class="com.it.dao.impl.BookDaoImpl" scope="prototype"/>-->
+    <!--    <bean id="userDao" class="com.it.dao.impl.UserDaoImpl" scope="prototype"/>-->
+    <!-- 3. 注解解析  -->
+        <context:component-scan base-package="com.it" />
 </beans>
