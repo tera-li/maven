@@ -6,4 +6,5 @@ com/it/AppContext.class
 com/it/service/impl/BookServiceImplAuto.class
 com/it/service/impl/BookServiceImpl.class
 com/it/service/BookServiceAuto.class
+com/it/config/SpringConfig.class
 com/it/dao/BookDao.class

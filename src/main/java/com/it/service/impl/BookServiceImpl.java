@@ -4,7 +4,10 @@ import com.it.dao.impl.BookDaoImpl;
 import com.it.dao.impl.UserDaoImpl;
 import com.it.service.BookService;
 import org.junit.Test;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Component
 public class BookServiceImpl implements BookService {
 //        BookDaoImpl BookDao = new BookDaoImpl();
     private BookDaoImpl BookDao;
