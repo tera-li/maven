@@ -20,9 +20,7 @@ public class AppContext {
 
         // 获取id，并调用
         BookServiceImpl bookService = (BookServiceImpl) ioc.getBean("bookService");
-        System.out.println(bookService);
-        BookDaoImpl bookDao = (BookDaoImpl) ioc.getBean("bookDao");
-        System.out.println(bookDao);
+        bookService.BookServiceRun();
 
 //        BookServiceImplAuto bookServiceAuto = (BookServiceImplAuto) ioc.getBean("bookServiceAuto");
 //        bookServiceAuto.BookServiceRun();
