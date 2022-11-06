@@ -7,11 +7,11 @@
     <sql id="bran">
         *
     </sql>
-    <select id="selectAll" resultType="User">
-        select
-        <include refid="bran"/>
-        from runoob_tbl;
-    </select>
+<!--    <select id="selectAll" resultType="User">-->
+<!--        select-->
+<!--        <include refid="bran"/>-->
+<!--        from runoob_tbl;-->
+<!--    </select>-->
     <!--  2  -->
     <resultMap id="userResultMap" type="User">
         <result column="runoob_title" property="runoobTitle"/>

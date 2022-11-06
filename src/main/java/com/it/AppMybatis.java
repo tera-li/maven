@@ -15,9 +15,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class main {
+public class AppMybatis {
 
     public SqlSession getSession() throws IOException {
+        /**
+         * @author : surprise
+         * @describe : 初始化SqlSessionFactory
+         * @date : 2022/11/1 22:14
+         */
         InputStream in = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
         return factory.openSession(true);

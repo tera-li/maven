@@ -2,11 +2,13 @@ package com.it.mapper;
 
 import com.it.user.User;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 import java.util.Map;
 
 public interface UserMapper {
+    @Select("select * from runoob_tbl")
     List<User> selectAll();
     List<User> selectAllList();
     List<User> selectOne(int id);

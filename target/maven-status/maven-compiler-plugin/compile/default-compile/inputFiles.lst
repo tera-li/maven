@@ -1,9 +1,10 @@
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/dao/impl/UserDaoImpl.java
+/Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/AppMybatis.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/service/BookService.java
-/Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/main.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/AppContext.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/service/impl/BookServiceImpl.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/service/BookServiceAuto.java
+/Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/config/CustomConfig.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/dao/UserDao.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/dao/BookDao.java
 /Users/surprise/Desktop/个人/自我项目/maven/src/main/java/com/it/user/User.java
